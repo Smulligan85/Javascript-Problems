@@ -24,3 +24,21 @@ function largestOfFour(arr) {
 }
 
 largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+/* Return true if the string in the first 
+element of the array contains all of the letters of the 
+string in the second element of the array. */
+
+function mutation(arr) {
+
+   var str2 = arr.splice(1).toString().toLowerCase();
+   var str1 = arr.toString().toLowerCase();
+  for(var i = 0; i < str2.length; i++) {
+    if (str1.indexOf(str2.charAt(i)) == -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+mutation(["hello", "hey"], "");
