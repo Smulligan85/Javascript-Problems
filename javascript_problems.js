@@ -42,3 +42,34 @@ function mutation(arr) {
 }
 
 mutation(["hello", "hey"], "");
+
+/* You will be provided with an initial array (the first argument 
+in the destroyer function), followed by one or more arguments. Remove 
+all elements from the initial array that are of the same value as these arguments. */
+
+function destroyer(arr) {
+  return [].slice.call(arguments, 1).reduce(function(arr, num) {
+    return arr.filter(function(item) {
+      return num !== item;
+    });
+  }, arr);
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3, "");
+
+// Difference of two arrays
+
+function diff(arr1, arr2) {
+  newArray = arr1.concat(arr2)
+  
+  function track(i) {
+      if (arr1.indexOf(i) === -1 || arr2.indexOf(i) === -1) {
+          return i;
+      }
+  } 
+  
+  return newArray.filter(track)
+}
+
+diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
