@@ -73,3 +73,52 @@ function diff(arr1, arr2) {
 
 diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 
+// Pig Latin
+
+function translate(str) {
+  var pig = '';
+  var vowels = /[aeiou]/gi;
+  
+  if (str[0].match(vowels)) {
+    return str + 'way';
+  } else {
+    var firstVowel = str.indexOf(str.match(vowels)[0]);
+    pig = str.substr(firstVowel) + str.substr(0, firstVowel) + 'ay';
+    return pig;
+  }
+}
+
+translate("consonant");
+
+// DNA Pairing
+
+function pair(str) {
+ var finalDNA = [];
+ dnaMatch = function(dna) {
+   switch (dna) {
+     case 'G':
+       finalDNA.push(["G", "C"]);
+       break;
+      case 'C':
+       finalDNA.push(["C", "G"]);
+       break;
+     case 'A':
+       finalDNA.push(["A", "T"]);
+       break;
+      case 'T':
+       finalDNA.push(["T", "A"]);
+       break;
+   }
+ }
+
+  for (var i =0; i < str.length; i++) {
+    dnaMatch(str[i]);
+  }
+  
+  return finalDNA;
+ 
+}
+
+pair("ATCGA");
+
+
