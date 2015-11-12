@@ -121,4 +121,20 @@ function pair(str) {
 
 pair("ATCGA");
 
+// Find missing letter in passed letter range
 
+function fearNotLetter(str) {
+    
+    for (var i = 0; i < str.length; i++) {
+          
+          var bit = str.charCodeAt(i);
+              
+              if (bit !== str.charCodeAt(0) + i) {
+                      return String.fromCharCode(bit - 1);
+                          }
+                }
+
+      return undefined;
+}
+
+fearNotLetter("abce");
