@@ -138,3 +138,15 @@ function fearNotLetter(str) {
 }
 
 fearNotLetter("abce");
+
+// Check if value is boolean or primative
+
+function boo(bool) {
+  if (typeof(bool) === "boolean") {
+    return true;
+  } else {
+    return false;
+         }
+  }
+boo(null);
+
