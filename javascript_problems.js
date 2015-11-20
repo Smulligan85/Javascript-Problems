@@ -150,3 +150,24 @@ function boo(bool) {
   }
 boo(null);
 
+// Find unique values of two arrays
+
+function unite(arr1, arr2, arr3) {
+    newArray = [];
+      
+      for (var i = 0; i < arguments.length; i++) {
+            var arrLength = arguments[i];
+                
+                for (var j = 0; j < arrLength.length; j++) {
+                        var indexValue = arrLength[j];
+
+                              while (newArray.indexOf(indexValue) < 0) {
+                                        newArray.push(indexValue);
+                                              }
+                                  }
+                  }
+        
+        return newArray;
+}
+
+unite([1, 3, 2], [1, [5]], [2, [4]]);
