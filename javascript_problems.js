@@ -171,3 +171,33 @@ function unite(arr1, arr2, arr3) {
 }
 
 unite([1, 3, 2], [1, [5]], [2, [4]]);
+
+// Convert HTML Entities
+
+function convert(str) {
+  var new_str = str.split('');
+  
+  for (var i = 0; i < new_str.length; i++) {
+       switch (str[i]) {
+         case "&":
+           new_str[i] = "&amp;";
+         break;
+         case "<":
+           new_str[i] = "&lt;";
+         break;
+         case ">":
+           new_str[i] = "&gt;";
+           break;
+         case '"':
+           new_str[i] = "&quot;";
+           break;
+         case "'":
+           new_str[i] = "&apos;";
+         break;
+       }
+    
+       }
+  return new_str.join('');
+}
+
+convert("Dolce & <Gabbana");
