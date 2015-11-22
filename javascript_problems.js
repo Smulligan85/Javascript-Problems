@@ -201,3 +201,12 @@ function convert(str) {
 }
 
 convert("Dolce & <Gabbana");
+
+// Switch case to use hyphens
+
+function spinalCase(str) {
+  var new_str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+  return new_str.replace(/[\s_]/gi, "-").toLowerCase();
+}
+
+spinalCase('This Is Spinal Tap');
