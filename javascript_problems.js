@@ -210,3 +210,23 @@ function spinalCase(str) {
 }
 
 spinalCase('This Is Spinal Tap');
+
+// Sum All Odd Fibonacci Numbers
+
+
+n sumFibs(num) {
+  var j = 0;
+  var k = 1;
+  var total = 0;
+  
+  while (j <= num) {
+      if (j % 2 !== 0) {
+            total += j;
+          }
+      k += j;
+      j = k - j;
+    }
+  return total;
+}
+
+sumFibs(1000);
