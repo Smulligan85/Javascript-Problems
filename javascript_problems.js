@@ -214,7 +214,7 @@ spinalCase('This Is Spinal Tap');
 // Sum All Odd Fibonacci Numbers
 
 
-n sumFibs(num) {
+function sumFibs(num) {
   var j = 0;
   var k = 1;
   var total = 0;
@@ -230,3 +230,24 @@ n sumFibs(num) {
 }
 
 sumFibs(1000);
+
+// Sum All Primes
+
+function sumPrimes(num) {
+    var k = [], i, j, primes = [];
+    for (i = 2; i <= num; ++i) {
+        if (!k[i]) {
+            // i has not been marked -- it is prime
+            primes.push(i);
+            for (j = i << 1; j <= num; j += i) {
+                k[j] = true;
+            }
+        }
+    }
+    return primes.reduce(function(a, b) {
+      return a + b;
+    });
+}
+
+sumPrimes(10);
+
